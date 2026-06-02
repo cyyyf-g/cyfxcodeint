@@ -1,0 +1,6 @@
+{
+  "name": "Deterministic AI Pipeline",
+  "description": "An elegant, interactive workspace presenting the concepts of Artifact-Centric AI Orchestration and deterministic build pipelines in a refined, modern presentation style.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
