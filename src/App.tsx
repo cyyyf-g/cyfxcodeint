@@ -213,12 +213,8 @@ Result: You get a reliable, high-performance web structure with zero regression 
   return (
     <div id="app-container" className="min-h-screen bg-[#070a13] text-[#abc4db] antialiased selection:bg-[#00d4ff]/20 selection:text-white font-sans relative">
       
-      {/* Background Decorative Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#101726_1px,transparent_1px),linear-gradient(to_bottom,#101726_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
-
-      {/* Floating Accent Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#7b61ff]/10 rounded-full blur-[100px] pointer-events-none z-0" />
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[#00d4ff]/10 rounded-full blur-[100px] pointer-events-none z-0" />
+      {/* Background with solid color for maximum reading comfort */}
+      <div className="absolute inset-0 bg-[#070a13] pointer-events-none z-0" />
 
       {/* Toast Alert */}
       {toastMessage && (
@@ -235,7 +231,7 @@ Result: You get a reliable, high-performance web structure with zero regression 
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-6">
               Artifact-Centric <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] via-[#7b61ff] to-[#ff61d1]">
+              <span className="text-[#00d4ff]">
                 AI Orchestration
               </span>
             </h1>
@@ -295,7 +291,7 @@ Result: You get a reliable, high-performance web structure with zero regression 
           {isRunningSim && (
             <div className="w-full md:w-32 bg-[#10192e] rounded-full h-1.5 overflow-hidden border border-[#1b2b4c]">
               <div 
-                className="bg-gradient-to-r from-[#00d4ff] to-[#7b61ff] h-full transition-all duration-300"
+                className="bg-[#00d4ff] h-full transition-all duration-300"
                 style={{ width: `${simProgress}%` }}
               />
             </div>
@@ -388,8 +384,8 @@ Result: You get a reliable, high-performance web structure with zero regression 
             
             <div className="bg-[#0a101f] border border-[#141f35] rounded-xl p-6 relative overflow-hidden flex-1 shadow-lg">
               
-              {/* Highlight bar depending on selected index */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00d4ff] to-[#7b61ff]" />
+              {/* Highlight bar depending on selected index with solid color */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#7b61ff]" />
               
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -442,13 +438,7 @@ Result: You get a reliable, high-performance web structure with zero regression 
 
             </div>
 
-            {/* Quick tips explaining the Artifact logic */}
-            <div className="bg-gradient-to-r from-[#00d4ff]/5 to-transparent border border-[#11233f] py-4 px-5 rounded-lg flex items-start gap-3">
-              <span className="text-xs p-1 bg-[#00d4ff]/10 text-[#00d4ff] rounded mt-0.5">ℹ</span>
-              <p className="text-[11px] text-[#5c7087] font-sans leading-relaxed">
-                By enforcing a **declarative, artifact-centric pipeline**, each phase receives clean inputs and writes immutable outputs. This removes chaotic text loops from state transitions entirely.
-              </p>
-            </div>
+
 
           </div>
 
@@ -468,10 +458,7 @@ Result: You get a reliable, high-performance web structure with zero regression 
                   </span>
                 </div>
                 
-                <span className="text-[10px] text-[#5c7087] font-mono flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-[#00ff9d] rounded-full inline-block animate-pulse" />
-                  Live Interactivity Active
-                </span>
+
               </div>
 
               {/* Dynamic Content depending on currently active Step Index */}
@@ -835,142 +822,7 @@ TIMESTAMP: ${new Date().toISOString()}`}
         </div>
 
 
-        {/* ARTIFACT-DRIVEN PROJECT PROPOSER (PLAYGROUND CREATOR) */}
-        <p className="text-[11px] font-mono uppercase tracking-widest text-[#5c7087] mb-4 flex items-center gap-2">
-          <span>02 // Formulate Custom Orchestration Plan</span>
-          <span className="flex-1 h-[1px] bg-[#141f35]" />
-        </p>
 
-        <section id="custom-proposer-card" className="bg-[#0a101f] border-2 border-[#15233f] rounded-xl p-8 mb-16 shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#00d4ff]/5 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-5 flex flex-col justify-between">
-              <div>
-                <span className="text-[#00d4ff] text-[10px] font-mono tracking-widest uppercase font-bold block mb-2">
-                  Interactive Strategy Architect
-                </span>
-                <h3 className="text-2xl font-black text-white leading-normal mb-3">
-                  Draft Your Own AI-Gated Pipeline
-                </h3>
-                <p className="text-xs text-[#738da7] font-dm leading-relaxed mb-6">
-                  Input a software project name to evaluate how an artifact-centric, state-gated layout establishes safety boundaries, eliminating typical continuous chat regression.
-                </p>
-              </div>
-
-              <form onSubmit={handleCreatePitch} className="space-y-4">
-                <div>
-                  <label className="block text-[10.5px] font-mono text-[#738da7] uppercase mb-2">
-                    PROJECT / MICROSERVICE NAME
-                  </label>
-                  <input
-                    type="text"
-                    id="input-project-name"
-                    value={playgroundProjectName}
-                    onChange={(e) => setPlaygroundProjectName(e.target.value)}
-                    placeholder="e.g. Fitbit Workouts Analytics Router"
-                    className="w-full bg-[#050812] text-xs font-mono font-bold text-white border-2 border-[#16294a] rounded-lg px-4 py-3 focus:outline-none focus:border-[#7b61ff] focus:ring-0 placeholder:text-neutral-700"
-                  />
-                </div>
-
-                <div className="text-[10px] text-[#5c7087] leading-relaxed italic">
-                  * Live output parameters will dynamically update based on the primary settings in the workspaces above.
-                </div>
-              </form>
-            </div>
-
-            <div className="lg:col-span-7 flex flex-col">
-              <div className="bg-[#050810] border border-[#121c33] rounded-xl p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <div className="flex justify-between items-center mb-4 pb-2 border-b border-[#142342]">
-                    <span className="text-[10px] font-mono tracking-widest text-[#5c7087]">
-                      STRATEGY BLUEPRINT PITCH FOR PROPOSAL
-                    </span>
-                    <span className="text-[9px] font-mono px-2 py-0.5 bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/30 rounded">
-                      AUTO GENERATED
-                    </span>
-                  </div>
-                  
-                  <div className="text-xs text-[#9eb6cb] font-dm whitespace-pre-wrap leading-relaxed max-h-72 overflow-y-auto" id="pitch-output-preview">
-                    {generatedPitch}
-                  </div>
-                </div>
-
-                <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-[#142342]">
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(generatedPitch);
-                      triggerToast('Blueprint text copied to clipboard!');
-                    }}
-                    className="px-4 py-2 bg-[#0c162c] text-xs text-white font-mono rounded hover:bg-[#122245] border border-[#172d5b]"
-                  >
-                    Copy Blueprint Text
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* SYSTEM COMPARISON MATRIX & REAL DECAY METRIC BLOCK */}
-        <p className="text-[11px] font-mono uppercase tracking-widest text-[#5c7087] mb-4 flex items-center gap-2">
-          <span>03 // Structural Performance Analysis Metrics</span>
-          <span className="flex-1 h-[1px] bg-[#141f35]" />
-        </p>
-
-        <section id="performance-metrics-block" className="mb-16">
-          
-          {/* THE COMPARISON TABLE (FULL-WIDTH) */}
-          <div className="w-full bg-[#0a101f] border border-[#141f35] rounded-xl p-6 shadow-lg">
-            <h3 className="text-lg font-extrabold text-white mb-1 flex items-center gap-2">
-              <Layers3 className="w-5 h-5 text-[#00d4ff]" />
-              Comparative Structural Matrix
-            </h3>
-            <p className="text-xs text-[#5c7087] mb-6 font-sans">
-              Metrics demonstrating architectural integrity as step density and revision complexity increase.
-            </p>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left font-mono text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-[#141f35] text-[#5c7087]">
-                    <th className="py-3 px-4 uppercase text-[10px] font-bold">Category Metric</th>
-                    <th className="py-3 px-4 uppercase text-[10px] text-red-400 font-bold">Sequential Chat Loop</th>
-                    <th className="py-3 px-4 uppercase text-[10px] text-[#00ff9d] font-bold">State-Driven API (Ours)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#141f35] text-neutral-300">
-                  <tr>
-                    <td className="py-3.5 px-4 font-sans font-bold text-white">Context Degradation</td>
-                    <td className="py-3.5 px-4 text-red-400/90">{METHODOLOGY_DIF.chat.stateLoss}</td>
-                    <td className="py-3.5 px-4 text-[#00ff9d]">{METHODOLOGY_DIF.artifact.stateLoss}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3.5 px-4 font-sans font-bold text-white">Revision Token Burns</td>
-                    <td className="py-3.5 px-4 text-red-400/90">{METHODOLOGY_DIF.chat.tokensSpent}</td>
-                    <td className="py-3.5 px-4 text-[#00ff9d]">{METHODOLOGY_DIF.artifact.tokensSpent}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3.5 px-4 font-sans font-bold text-white">Regression Failure Defect</td>
-                    <td className="py-3.5 px-4 text-red-400/90">{METHODOLOGY_DIF.chat.reliability}</td>
-                    <td className="py-3.5 px-4 text-[#00ff9d]">{METHODOLOGY_DIF.artifact.reliability}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3.5 px-4 font-sans font-bold text-white">Core Architectural Grip</td>
-                    <td className="py-3.5 px-4 text-neutral-400 text-[11px] font-dm">{METHODOLOGY_DIF.chat.architecture}</td>
-                    <td className="py-3.5 px-4 text-neutral-200 text-[11px] font-dm">{METHODOLOGY_DIF.artifact.architecture}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3.5 px-4 font-sans font-bold text-white">Refactoring Maintenance Time</td>
-                    <td className="py-3.5 px-4 text-neutral-400 text-[11px] font-dm">{METHODOLOGY_DIF.chat.maintenance}</td>
-                    <td className="py-3.5 px-4 text-neutral-200 text-[11px] font-dm">{METHODOLOGY_DIF.artifact.maintenance}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
 
 
       </div>
